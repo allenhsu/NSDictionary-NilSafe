@@ -8,7 +8,6 @@
 
 #import <XCTest/XCTest.h>
 #import "NSDictionary+NilSafe.h"
-#import "GLNull.h"
 
 @interface Tests : XCTestCase
 
@@ -35,6 +34,13 @@
     };
     XCTAssertEqualObjects([dict allKeys], @[nonNilKey]);
     XCTAssertNoThrow([dict objectForKey:nonNilKey]);
+    id val = dict[nonNilKey];
+    XCTAssertEqualObjects(val, [NSNull null]);
+    XCTAssertNoThrow([val length]);
+    XCTAssertNoThrow([val count]);
+    XCTAssertNoThrow([val anyObject]);
+    XCTAssertNoThrow([val intValue]);
+    XCTAssertNoThrow([val integerValue]);
 }
 
 - (void)testKeyedSubscript {
@@ -70,7 +76,10 @@
         nonNilKey: nilVal,
         nilKey: nonNilVal,
     };
-    XCTAssertNoThrow([NSKeyedArchiver archivedDataWithRootObject:dict]);
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dict];
+    NSDictionary *dict2 = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    XCTAssertEqualObjects([dict2 allKeys], @[nonNilKey]);
+    XCTAssertNoThrow([dict2 objectForKey:nonNilKey]);
 }
 
 - (void)testJSON {
@@ -86,13 +95,6 @@
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSString *expectedString = @"{\"non-nil-key\":null}";
     XCTAssertEqualObjects(jsonString, expectedString);
-}
-
-- (void)testGLNull {
-    id null = [GLNull null];
-    XCTAssertNoThrow([null length]);
-    XCTAssertNoThrow([null count]);
-    XCTAssertEqualObjects(null, [NSNull null]);
 }
 
 @end

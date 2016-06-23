@@ -11,8 +11,6 @@
 		9FB0E0EA1D1AB91B00846FE9 /* NSDictionary+NilSafe.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB0E0E61D1AB8B600846FE9 /* NSDictionary+NilSafe.h */; };
 		9FB0E0F21D1AB97700846FE9 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0E0F11D1AB97700846FE9 /* Tests.m */; };
 		9FB0E0F41D1AB97700846FE9 /* libNSDictionary-NilSafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB0E0DA1D1AB61E00846FE9 /* libNSDictionary-NilSafe.a */; };
-		9FB0E0FC1D1BB25800846FE9 /* GLNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB0E0FA1D1BB25700846FE9 /* GLNull.h */; };
-		9FB0E0FD1D1BB25800846FE9 /* GLNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0E0FB1D1BB25800846FE9 /* GLNull.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +42,6 @@
 		9FB0E0EF1D1AB97600846FE9 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB0E0F11D1AB97700846FE9 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		9FB0E0F31D1AB97700846FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FB0E0FA1D1BB25700846FE9 /* GLNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLNull.h; sourceTree = "<group>"; };
-		9FB0E0FB1D1BB25800846FE9 /* GLNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLNull.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +86,6 @@
 			children = (
 				9FB0E0E61D1AB8B600846FE9 /* NSDictionary+NilSafe.h */,
 				9FB0E0E71D1AB8B600846FE9 /* NSDictionary+NilSafe.m */,
-				9FB0E0FA1D1BB25700846FE9 /* GLNull.h */,
-				9FB0E0FB1D1BB25800846FE9 /* GLNull.m */,
 			);
 			path = "NSDictionary-NilSafe";
 			sourceTree = "<group>";
@@ -112,7 +106,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FB0E0FC1D1BB25800846FE9 /* GLNull.h in Headers */,
 				9FB0E0EA1D1AB91B00846FE9 /* NSDictionary+NilSafe.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +200,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB0E0E81D1AB8B600846FE9 /* NSDictionary+NilSafe.m in Sources */,
-				9FB0E0FD1D1BB25800846FE9 /* GLNull.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

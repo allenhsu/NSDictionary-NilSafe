@@ -8,7 +8,6 @@
 
 #import <objc/runtime.h>
 #import "NSDictionary+NilSafe.h"
-#import "GLNull.h"
 
 @implementation NSObject (Swizzling)
 
@@ -58,7 +57,7 @@
             continue;
         }
         if (!obj) {
-            obj = [GLNull null];
+            obj = [NSNull null];
         }
         safeKeys[j] = key;
         safeObjects[j] = obj;
@@ -78,7 +77,7 @@
             continue;
         }
         if (!obj) {
-            obj = [GLNull null];
+            obj = [NSNull null];
         }
         safeKeys[j] = key;
         safeObjects[j] = obj;
@@ -105,7 +104,7 @@
         return;
     }
     if (!anObject) {
-        anObject = [GLNull null];
+        anObject = [NSNull null];
     }
     [self gl_setObject:anObject forKey:aKey];
 }
@@ -115,9 +114,44 @@
         return;
     }
     if (!obj) {
-        obj = [GLNull null];
+        obj = [NSNull null];
     }
     [self gl_setObject:obj forKeyedSubscript:key];
+}
+
+@end
+
+@implementation NSNull (NilSafe)
+
+
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self gl_swizzleMethod:@selector(methodSignatureForSelector:) withMethod:@selector(gl_methodSignatureForSelector:)];
+        [self gl_swizzleMethod:@selector(forwardInvocation:) withMethod:@selector(gl_forwardInvocation:)];
+    });
+}
+
+- (NSMethodSignature *)gl_methodSignatureForSelector:(SEL)aSelector {
+    NSMethodSignature *sig = [self gl_methodSignatureForSelector:aSelector];
+    if (sig) {
+        return sig;
+    }
+    return [NSMethodSignature signatureWithObjCTypes:@encode(void)];
+}
+
+- (void)gl_forwardInvocation:(NSInvocation *)anInvocation {
+    NSUInteger returnLength = [[anInvocation methodSignature] methodReturnLength];
+    if (!returnLength) {
+        // nothing to do
+        return;
+    }
+
+    // set return value to all zero bits
+    char buffer[returnLength];
+    memset(buffer, 0, returnLength);
+
+    [anInvocation setReturnValue:buffer];
 }
 
 @end
