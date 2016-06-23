@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9FB0E0E81D1AB8B600846FE9 /* NSDictionary+NilSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0E0E71D1AB8B600846FE9 /* NSDictionary+NilSafe.m */; };
+		9FB0E0EA1D1AB91B00846FE9 /* NSDictionary+NilSafe.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB0E0E61D1AB8B600846FE9 /* NSDictionary+NilSafe.h */; };
+		9FB0E0F21D1AB97700846FE9 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0E0F11D1AB97700846FE9 /* Tests.m */; };
+		9FB0E0F41D1AB97700846FE9 /* libNSDictionary-NilSafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB0E0DA1D1AB61E00846FE9 /* libNSDictionary-NilSafe.a */; };
+		9FB0E0FC1D1BB25800846FE9 /* GLNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB0E0FA1D1BB25700846FE9 /* GLNull.h */; };
+		9FB0E0FD1D1BB25800846FE9 /* GLNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0E0FB1D1BB25800846FE9 /* GLNull.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9FB0E0F51D1AB97700846FE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FB0E0D21D1AB61D00846FE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FB0E0D91D1AB61E00846FE9;
+			remoteInfo = "NSDictionary-NilSafe";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9FB0E0D81D1AB61E00846FE9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9FB0E0DA1D1AB61E00846FE9 /* libNSDictionary-NilSafe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNSDictionary-NilSafe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FB0E0E61D1AB8B600846FE9 /* NSDictionary+NilSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NilSafe.h"; sourceTree = "<group>"; };
+		9FB0E0E71D1AB8B600846FE9 /* NSDictionary+NilSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NilSafe.m"; sourceTree = "<group>"; };
+		9FB0E0EF1D1AB97600846FE9 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FB0E0F11D1AB97700846FE9 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
+		9FB0E0F31D1AB97700846FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FB0E0FA1D1BB25700846FE9 /* GLNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLNull.h; sourceTree = "<group>"; };
+		9FB0E0FB1D1BB25800846FE9 /* GLNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLNull.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FB0E0D71D1AB61E00846FE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FB0E0EC1D1AB97600846FE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FB0E0F41D1AB97700846FE9 /* libNSDictionary-NilSafe.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FB0E0D11D1AB61D00846FE9 = {
+			isa = PBXGroup;
+			children = (
+				9FB0E0DC1D1AB61E00846FE9 /* NSDictionary-NilSafe */,
+				9FB0E0F01D1AB97700846FE9 /* Tests */,
+				9FB0E0DB1D1AB61E00846FE9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FB0E0DB1D1AB61E00846FE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FB0E0DA1D1AB61E00846FE9 /* libNSDictionary-NilSafe.a */,
+				9FB0E0EF1D1AB97600846FE9 /* Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FB0E0DC1D1AB61E00846FE9 /* NSDictionary-NilSafe */ = {
+			isa = PBXGroup;
+			children = (
+				9FB0E0E61D1AB8B600846FE9 /* NSDictionary+NilSafe.h */,
+				9FB0E0E71D1AB8B600846FE9 /* NSDictionary+NilSafe.m */,
+				9FB0E0FA1D1BB25700846FE9 /* GLNull.h */,
+				9FB0E0FB1D1BB25800846FE9 /* GLNull.m */,
+			);
+			path = "NSDictionary-NilSafe";
+			sourceTree = "<group>";
+		};
+		9FB0E0F01D1AB97700846FE9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9FB0E0F11D1AB97700846FE9 /* Tests.m */,
+				9FB0E0F31D1AB97700846FE9 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9FB0E0E91D1AB90F00846FE9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FB0E0FC1D1BB25800846FE9 /* GLNull.h in Headers */,
+				9FB0E0EA1D1AB91B00846FE9 /* NSDictionary+NilSafe.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9FB0E0D91D1AB61E00846FE9 /* NSDictionary-NilSafe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FB0E0E31D1AB61E00846FE9 /* Build configuration list for PBXNativeTarget "NSDictionary-NilSafe" */;
+			buildPhases = (
+				9FB0E0E91D1AB90F00846FE9 /* Headers */,
+				9FB0E0D61D1AB61E00846FE9 /* Sources */,
+				9FB0E0D71D1AB61E00846FE9 /* Frameworks */,
+				9FB0E0D81D1AB61E00846FE9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NSDictionary-NilSafe";
+			productName = "NSDictionary-NilSafe";
+			productReference = 9FB0E0DA1D1AB61E00846FE9 /* libNSDictionary-NilSafe.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9FB0E0EE1D1AB97600846FE9 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FB0E0F71D1AB97700846FE9 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				9FB0E0EB1D1AB97600846FE9 /* Sources */,
+				9FB0E0EC1D1AB97600846FE9 /* Frameworks */,
+				9FB0E0ED1D1AB97600846FE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FB0E0F61D1AB97700846FE9 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 9FB0E0EF1D1AB97600846FE9 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FB0E0D21D1AB61D00846FE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Glow Inc.";
+				TargetAttributes = {
+					9FB0E0D91D1AB61E00846FE9 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					9FB0E0EE1D1AB97600846FE9 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 9FB0E0D51D1AB61E00846FE9 /* Build configuration list for PBXProject "NSDictionary-NilSafe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9FB0E0D11D1AB61D00846FE9;
+			productRefGroup = 9FB0E0DB1D1AB61E00846FE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FB0E0D91D1AB61E00846FE9 /* NSDictionary-NilSafe */,
+				9FB0E0EE1D1AB97600846FE9 /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FB0E0ED1D1AB97600846FE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FB0E0D61D1AB61E00846FE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FB0E0E81D1AB8B600846FE9 /* NSDictionary+NilSafe.m in Sources */,
+				9FB0E0FD1D1BB25800846FE9 /* GLNull.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FB0E0EB1D1AB97600846FE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FB0E0F21D1AB97700846FE9 /* Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9FB0E0F61D1AB97700846FE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FB0E0D91D1AB61E00846FE9 /* NSDictionary-NilSafe */;
+			targetProxy = 9FB0E0F51D1AB97700846FE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9FB0E0E11D1AB61E00846FE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		9FB0E0E21D1AB61E00846FE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9FB0E0E41D1AB61E00846FE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9FB0E0E51D1AB61E00846FE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9FB0E0F81D1AB97700846FE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glowing.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9FB0E0F91D1AB97700846FE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glowing.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FB0E0D51D1AB61E00846FE9 /* Build configuration list for PBXProject "NSDictionary-NilSafe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FB0E0E11D1AB61E00846FE9 /* Debug */,
+				9FB0E0E21D1AB61E00846FE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FB0E0E31D1AB61E00846FE9 /* Build configuration list for PBXNativeTarget "NSDictionary-NilSafe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FB0E0E41D1AB61E00846FE9 /* Debug */,
+				9FB0E0E51D1AB61E00846FE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FB0E0F71D1AB97700846FE9 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FB0E0F81D1AB97700846FE9 /* Debug */,
+				9FB0E0F91D1AB97700846FE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FB0E0D21D1AB61D00846FE9 /* Project object */;
+}
