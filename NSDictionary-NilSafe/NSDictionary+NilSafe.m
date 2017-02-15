@@ -57,7 +57,7 @@
             continue;
         }
         if (!obj) {
-            obj = [NSNull null];
+            obj = [GLNull null];
         }
         safeKeys[j] = key;
         safeObjects[j] = obj;
@@ -77,7 +77,7 @@
             continue;
         }
         if (!obj) {
-            obj = [NSNull null];
+            obj = [GLNull null];
         }
         safeKeys[j] = key;
         safeObjects[j] = obj;
@@ -104,7 +104,7 @@
         return;
     }
     if (!anObject) {
-        anObject = [NSNull null];
+        anObject = [GLNull null];
     }
     [self gl_setObject:anObject forKey:aKey];
 }
@@ -114,33 +114,58 @@
         return;
     }
     if (!obj) {
-        obj = [NSNull null];
+        obj = [GLNull null];
     }
     [self gl_setObject:obj forKeyedSubscript:key];
 }
 
 @end
 
-@implementation NSNull (NilSafe)
-
-
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self gl_swizzleMethod:@selector(methodSignatureForSelector:) withMethod:@selector(gl_methodSignatureForSelector:)];
-        [self gl_swizzleMethod:@selector(forwardInvocation:) withMethod:@selector(gl_forwardInvocation:)];
-    });
+static GLNull *gl_singletonNull = nil;
+static void *gl_fakeBlockInvoke(__weak GLNull *null, ...) {
+    return nil;
 }
 
-- (NSMethodSignature *)gl_methodSignatureForSelector:(SEL)aSelector {
-    NSMethodSignature *sig = [self gl_methodSignatureForSelector:aSelector];
-    if (sig) {
-        return sig;
+@implementation GLNull
+
++ (void)initialize {
+    if (self == [GLNull class]) {
+        if (!gl_singletonNull) {
+            gl_singletonNull = [[self alloc] init];
+        }
     }
+}
+
++ (GLNull *)null {
+    return gl_singletonNull;
+}
+
+- (NSString *)description {
+    return @"<GLNull>";
+}
+
+- (instancetype)init {
+    invoke = &gl_fakeBlockInvoke;
+    return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [self init];
+    return self;
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     return [NSMethodSignature signatureWithObjCTypes:@encode(void)];
 }
 
-- (void)gl_forwardInvocation:(NSInvocation *)anInvocation {
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
     NSUInteger returnLength = [[anInvocation methodSignature] methodReturnLength];
     if (!returnLength) {
         // nothing to do
@@ -152,6 +177,39 @@
     memset(buffer, 0, returnLength);
 
     [anInvocation setReturnValue:buffer];
+}
+
+- (BOOL)respondsToSelector:(SEL)selector {
+    // behave like nil
+    return NO;
+}
+
+#pragma mark NSObject protocol
+
+- (BOOL)conformsToProtocol:(Protocol *)aProtocol {
+    return NO;
+}
+
+- (NSUInteger)hash {
+    return 0;
+}
+
+- (BOOL)isEqual:(id)obj {
+    return !obj || obj == self || [obj isEqual:[NSNull null]];
+}
+
+- (BOOL)isKindOfClass:(Class)class {
+    return [class isEqual:[GLNull class]] || [class isEqual:[NSNull class]];
+}
+
+- (BOOL)isMemberOfClass:(Class)class {
+    return [class isEqual:[GLNull class]] || [class isEqual:[NSNull class]];
+}
+
+- (BOOL)isProxy {
+    // not really a proxy -- we just inherit from NSProxy because it makes
+    // method signature lookup simpler
+    return NO;
 }
 
 @end

@@ -97,4 +97,27 @@
     XCTAssertEqualObjects(jsonString, expectedString);
 }
 
+typedef NSInteger (^TestBlockType)(NSInteger input);
+typedef void(^TestBlockType2)(NSString *input);
+
+- (void)testBlock {
+    TestBlockType b1 = ^NSInteger(NSInteger input) {
+        return input + 1;
+    };
+    TestBlockType b2 = nil;
+    TestBlockType2 b3 = nil;
+    NSDictionary *dict = @{
+        @"b1": b1,
+        @"b2": b2,
+        @"b3": b3,
+    };
+    TestBlockType rb1 = dict[@"b1"];
+    TestBlockType rb2 = dict[@"b2"];
+    TestBlockType2 rb3 = dict[@"b3"];
+    XCTAssertEqual(rb1(1), 2);
+    XCTAssertNoThrow(rb2(1));
+    XCTAssertEqual(rb2(1), 0);
+    XCTAssertNoThrow(rb3(@"test"));
+}
+
 @end
