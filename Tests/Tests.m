@@ -32,10 +32,10 @@
         nonNilKey: nilVal,
         nilKey: nonNilVal,
     };
-    XCTAssertEqualObjects([dict allKeys], @[nonNilKey]);
+    XCTAssertEqualObjects([dict allKeys], @[]);
     XCTAssertNoThrow([dict objectForKey:nonNilKey]);
     id val = dict[nonNilKey];
-    XCTAssertEqualObjects(val, [NSNull null]);
+    XCTAssertNil(val);
     XCTAssertNoThrow([val length]);
     XCTAssertNoThrow([val count]);
     XCTAssertNoThrow([val anyObject]);
@@ -51,7 +51,7 @@
     id nonNilVal = @"non-nil-val";
     dict[nonNilKey] = nilVal;
     dict[nilKey] = nonNilVal;
-    XCTAssertEqualObjects([dict allKeys], @[nonNilKey]);
+    XCTAssertEqualObjects([dict allKeys], @[]);
     XCTAssertNoThrow([dict objectForKey:nonNilKey]);
 }
 
@@ -63,7 +63,7 @@
     id nonNilVal = @"non-nil-val";
     [dict setObject:nilVal forKey:nonNilKey];
     [dict setObject:nonNilVal forKey:nilKey];
-    XCTAssertEqualObjects([dict allKeys], @[nonNilKey]);
+    XCTAssertEqualObjects([dict allKeys], @[]);
     XCTAssertNoThrow([dict objectForKey:nonNilKey]);
 }
 
@@ -78,7 +78,7 @@
     };
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dict];
     NSDictionary *dict2 = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    XCTAssertEqualObjects([dict2 allKeys], @[nonNilKey]);
+    XCTAssertEqualObjects([dict2 allKeys], @[]);
     XCTAssertNoThrow([dict2 objectForKey:nonNilKey]);
 }
 
@@ -93,7 +93,7 @@
     };
     NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:0 error:NULL];
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSString *expectedString = @"{\"non-nil-key\":null}";
+    NSString *expectedString = @"{}";
     XCTAssertEqualObjects(jsonString, expectedString);
 }
 

@@ -15,7 +15,3 @@
 @interface NSMutableDictionary (NilSafe)
 
 @end
-
-@interface NSNull (NilSafe)
-
-@end
