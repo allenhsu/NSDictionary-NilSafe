@@ -73,9 +73,6 @@
         if (!key || !obj) {
             continue;
         }
-        if (!obj) {
-            obj = [NSNull null];
-        }
         safeKeys[j] = key;
         safeObjects[j] = obj;
         j++;
